@@ -3,7 +3,7 @@ import { CommonModule } from "@angular/common";
 
 import { PhotoFormComponent } from "./photo-form.component";
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
-import { VMessageComponent } from "../../shared/components/vmessage/vmessage.component";
+import { VMessageModule } from "../../shared/components/vmessage/vmessage.module";
 
 @NgModule({
     declarations: [
@@ -12,7 +12,8 @@ import { VMessageComponent } from "../../shared/components/vmessage/vmessage.com
     imports: [
         CommonModule,
         ReactiveFormsModule,
-        FormsModule
+        FormsModule,
+        VMessageModule
     ]
 })
 export class PhotoFormModule {}
