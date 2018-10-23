@@ -5,7 +5,7 @@ import { ActivatedRouteSnapshot, RouterStateSnapshot } from "@angular/router";
 import { Observable } from "rxjs";
 
 @Injectable({ providedIn: 'root' })
-export class wAuthGuard implements CanActivate{
+export class AuthGuard implements CanActivate{
 
     
     constructor(
