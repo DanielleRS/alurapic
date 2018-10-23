@@ -5,7 +5,7 @@ import { ActivatedRouteSnapshot, RouterStateSnapshot } from "@angular/router";
 import { Observable } from "rxjs";
 
 @Injectable({ providedIn: 'root' })
-export class wAuthGuard implements CanActivate{
+export class LoginGuard implements CanActivate{
 
     
     constructor(
@@ -14,9 +14,9 @@ export class wAuthGuard implements CanActivate{
     ) {}
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | Observable<boolean> | Promise<boolean> {
-        if (!this.userService.isLogged()){
-           this.router.navigate(['']);
-           return false;
+        if (this.userService.isLogged()){
+            this.router.navigate(['user', this.userService.getUserName()]);        
+            return false;
         }
         return true;
     }
